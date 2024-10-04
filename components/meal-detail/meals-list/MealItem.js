@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import { Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import MealAttribute from "./meal-detail/MealAttribute";
+import MealAttribute from "../MealAttribute";
 const MealItem = ({ title, imgUrl, duration, complexity, affordability, id }) => {
   const navigation = useNavigation();
   function pressHandler(){

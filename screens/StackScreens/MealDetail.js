@@ -5,23 +5,35 @@ import MealAttribute from "../../components/meal-detail/MealAttribute";
 import Subtitle from "../../components/meal-detail/Subtitle";
 import List from "../../components/meal-detail/List";
 import IconBtn from "../../components/meal-detail/IconBtn";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addFavourite,removeFavourite } from "../../store/favourites";
 const MealDetail = ({ route,navigation }) => {
   const mealId = route.params.mealId;
+  const dispatch = useDispatch();
+  const favouriteMealIds = useSelector((state)=>state.fav.id);
+  const isMealFav = favouriteMealIds.includes(mealId);
+
   const selectedMeal = MEALS.find((meal) => meal.id == mealId);
+
   const mealAttribute = {
     duration: selectedMeal.duration,
     affordability: selectedMeal.affordability,
     complexity: selectedMeal.complexity,
   };
   function headerBtnPressHandler(){
-    console.warn("pressed");
+    if(isMealFav){
+      dispatch(removeFavourite({id:mealId}));
+    }
+    else{
+      dispatch(addFavourite({id:mealId}));
+    }
     
   }
+
   useLayoutEffect(()=>{
     navigation.setOptions({
       headerRight: ()=>{
-        return <IconBtn title='tap' onPress={headerBtnPressHandler}/>
+        return <IconBtn title='tap' color={isMealFav ? 'red': 'white'} onPress={headerBtnPressHandler}/>
       }
     })
   },[navigation,headerBtnPressHandler])
