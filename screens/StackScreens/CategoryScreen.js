@@ -1,5 +1,5 @@
-import { CATEGORIES } from "../data/dummy-data";
-import CategoryTile from "../components/CategoryTile";
+import { CATEGORIES } from "../../data/dummy-data";
+import CategoryTile from "../../components/CategoryTile";
 import { FlatList } from "react-native";
 
 
@@ -25,7 +25,6 @@ function CategoryScreen({ navigation }) {
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
       renderItem={renderCategories}
-      numColumns={2}
     />
   );
 }

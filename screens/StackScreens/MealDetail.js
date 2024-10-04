@@ -1,10 +1,10 @@
 import React,{useLayoutEffect} from "react";
 import { Text, View, Image, StyleSheet, ScrollView, Button } from "react-native";
-import { MEALS } from "../data/dummy-data";
-import MealAttribute from "../components/meal-detail/MealAttribute";
-import Subtitle from "../components/meal-detail/Subtitle";
-import List from "../components/meal-detail/List";
-import IconBtn from "../components/meal-detail/IconBtn";
+import { MEALS } from "../../data/dummy-data";
+import MealAttribute from "../../components/meal-detail/MealAttribute";
+import Subtitle from "../../components/meal-detail/Subtitle";
+import List from "../../components/meal-detail/List";
+import IconBtn from "../../components/meal-detail/IconBtn";
 
 const MealDetail = ({ route,navigation }) => {
   const mealId = route.params.mealId;
