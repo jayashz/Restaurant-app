@@ -4,17 +4,19 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import CategoryScreen from "./screens/CategoryScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AvailableMeals from "./screens/AvailableMeals";
 import MealDetail from "./screens/MealDetail";
+import Favourites from "./screens/TabScreens/Favourites";
 
-export default function App() {
+function Home() {
   const Stack = createNativeStackNavigator();
 
   return (
     <>
       <StatusBar style="dark" />
 
-      <NavigationContainer>
+
         <Stack.Navigator
           initialRouteName="Categories"
           screenOptions={{
@@ -29,19 +31,26 @@ export default function App() {
               title: "All Categories",
             }}
           />
-          <Stack.Screen
-            name="Available-meals"
-            component={AvailableMeals}
-          />
+          <Stack.Screen name="Available-meals" component={AvailableMeals} />
 
-          <Stack.Screen 
-          name="Meal-details"
-          component={MealDetail}>
-            
-          </Stack.Screen>
+          <Stack.Screen
+            name="Meal-details"
+            component={MealDetail}
+          ></Stack.Screen>
         </Stack.Navigator>
-      </NavigationContainer>
+
     </>
+  );
+}
+export default function App() {
+  const Tab = createBottomTabNavigator();
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Favourite" component={Favourites} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
