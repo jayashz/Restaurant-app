@@ -9,7 +9,7 @@ import Meal from '../models/meal';
 
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#f5428d','https://images.unsplash.com/photo-1617183545317-9b62b9b24812?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+  new Category('c1', 'Italian', '#f5428d','https://cdn.pixabay.com/photo/2017/09/30/15/10/plate-2802332_1280.jpg'),
   new Category('c2', 'Quick & Easy', '#f54242','https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg'),
   new Category('c3', 'Hamburgers', '#f5a442','https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg'),
   new Category('c4', 'German', '#f5d142','https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg'),
