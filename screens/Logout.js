@@ -1,12 +1,30 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 const Logout = () => {
   return (
-    <View>
-        <Text>Logout</Text>
+    <View style={styles.container}>
+      <View style={styles.innerContainer} >
+
+      <Button title='Logout' style={styles.btn}/>
+      </View>
     </View>
   )
 }
 
-export default Logout
+export default Logout;
+
+const styles= StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center'
+  },
+  innerContainer:{
+    width:150,
+    position:'absolute',
+    bottom:10
+  },
+  btn:{
+
+  }
+});

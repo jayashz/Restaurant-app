@@ -1,9 +1,9 @@
 import React from "react";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet, Text, Image, ImageBackground } from "react-native";
 import { View } from "react-native";
 import { Platform } from "react-native";
 
-const CategoryTile = ({ title, color, onPress }) => {
+const CategoryTile = ({ title,onPress, img}) => {
  
   return (
     <View style={[styles.rootContainer]}>
@@ -12,7 +12,8 @@ const CategoryTile = ({ title, color, onPress }) => {
         android_ripple={{ color: "#ccc" }}
         onPress={onPress}
       >
-        <View style={[styles.innerContainer,{backgroundColor:color}]}>
+        <View style={styles.innerContainer}>
+        <ImageBackground source={{uri: img}} style={styles.imgg}/>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
@@ -47,11 +48,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 14,
-    borderRadius:10
+    borderRadius:10,
+    overflow:'hidden'
   },
   title: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: "bold",
+    position:'absolute',
+    color:'white'
   },
+  imgg:{
+    width:'100%',
+    height:200,
+    objectFit:'cover',
+    zIndex:-1,
+  }
+  
 });

@@ -15,6 +15,7 @@ function CategoryScreen({ navigation }) {
       <CategoryTile
         title={data.item.title}
         color={data.item.color}
+        img={data.item.img}
         onPress={pressHandler}
       />
     );
